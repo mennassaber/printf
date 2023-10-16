@@ -7,8 +7,6 @@
  */
 int main(void)
 {
-	
-     _printf("String:[%s][%c][%%]\n", "hello", 'h');
-    
-return 0;
+_printf("String:[%s] character [%c]\n", "I am a string !", 'h');
+return (0);
 }

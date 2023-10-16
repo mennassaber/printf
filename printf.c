@@ -1,47 +1,68 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <string.h>
-#include <unistd.h>
 #include "main.h"
+int _putchar(char c)
+{return (write(1, &c, 1));}
+
+int _strlen(char *str)
+{int count = 0;
+while (*str != '\0')
+{count +=1; str++;}
+return count;}
+
+int _constlen(const char *con)
+{int len = 0;
+while(*con != '\0')
+{len+=1; con++;} return len;}
+
+/**
+ *_printf-a function that produces output according to a format
+ *@format:input by user
+ *Return:number of characters printed
+ **/
 int _printf(const char *format, ...)
 {
-char c;
-char *str;
-va_list arg;
-unsigned int i;
-char *errormsg = "error";
-va_start(arg, format);
+	va_list arg;
+	int i;
+	char c;
+	char *str;
 
-if (*format == '\0')
-{
-	return (-1);
-	write(1, errormsg, 5);
-}
-else
-{for(i = 0; i < strlen(format); i++)
-{if((format[i] != '%') && (format[i] != '\0'))
-{
-putchar(format[i]);}
-}
-if(format[i] == '%')
-{
-switch(format[i + 1]){
-case 's':
-str=va_arg(arg, char*);
-write(1, str, strlen(str));
-break;
-case 'c':
-c=va_arg(arg, int);
-write(1, &c, 1);
-break;
-case '%':
-c = '%';
-write(1, &c, 1);
-break;
-default:
-break;
-}
-}
-}
-return (0);
+	if (format == NULL)
+	{
+		return(-1);
+	}
+	else
+	{va_start(arg, format);
+		
+		for (i = 0; i < _constlen(format); i++)
+		{
+			if (format[i] == '%')
+			{
+				switch (format[i + 1])
+				{
+					case 'c':
+					c = va_arg(arg, int);
+					write(1, &c, 1);
+					break;
+					case 's':
+					str = va_arg(arg, char*);
+					write(1, str, _strlen(str));
+					
+					break;
+					case '%':
+					c = '%';
+					write(1, &c, 1);
+					
+					default:
+					break;
+				}
+			}
+			if ((format[i] != '%') && (format[i] != '\0'))
+			{
+				if(i != 0 && format[i-1] == '%')
+				{continue;}
+				_putchar(format[i]);
+			}
+		}
+	}
+	va_end(arg);
+	return (0);
 }
