@@ -27,11 +27,6 @@ int _strlen(char *str)
 	}
 	return count;
 }
-/**
- *_strlen-return length of const input
- *@con:const input
- *Return: length of constant string
- **/
 int _constlen(const char *con)
 {
 	int len = 0;
