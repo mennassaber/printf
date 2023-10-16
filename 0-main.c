@@ -18,7 +18,7 @@ _printf("String:[%s] nothing then character [%c]\n", "I am a string !",'f');
 _printf("should print single [%%]\n");
 _printf("%schar%c char:%c %sone:%% word:%s\n","hi",';','-',"Ht","yt\n");
 
-_printf("%i\n",3);
+
 return (0);
 }
 
