@@ -1,17 +1,17 @@
 #include "main.h"
 int _printf(const char *format, ...)
-{va_list arg;
-	int i;
-	char c;
-	char *str;
+{va_list arg;int i;
+	char c;char *str;
 if (format == NULL)
 {return(-1);
 	}
 	else
 	{va_start(arg, format);
 		for (i = 0; i < _constlen(format); i++)
-		{if (format[i] == '%')
-			{switch (format[i + 1])
+		{
+			if (format[i] == '%')
+			{
+				switch (format[i + 1])
 				{case 'c':
 					c = va_arg(arg, int);
 					write(1, &c, 1);
@@ -28,12 +28,13 @@ if (format == NULL)
 					break;
 				}
 			}if ((format[i] != '%') && (format[i] != '\0'))
-			{if(i != 0 && format[i-1] == '%')
-				{continue;}
+			{
+				if(i != 0 && format[i-1] == '%')
+				{
+					continue;}
 				_putchar(format[i]);
 			}
 		}
 	}
 	va_end(arg);
-	return (0);
-}
+	return (0);}

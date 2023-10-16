@@ -1,11 +1,9 @@
-#include <unistd.h>
 #include "main.h"
 
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
- *
- * Return: On success 1.
+ *Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c)
@@ -20,21 +18,23 @@ int _putchar(char c)
 int _strlen(char *str)
 {
 	int count = 0;
+
 	while (*str != '\0')
 	{
-		count += 1; 
+		count += 1;
 		str++;
 	}
-	return count;
+	return (count);
 }
 int _constlen(const char *con)
 {
 	int len = 0;
 
-	while(*con != '\0')
+	while (*con != '\0')
 
 	{
-		len += 1; 
+		len += 1;
 		con++;
-	} 
-	return len;}
+	}
+	return (len);
+}
