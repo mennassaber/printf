@@ -29,7 +29,7 @@ int handle_holder(char h, va_list arg)
 			break;
 		case 'i':
 			num = va_arg(arg, int);
-			print_int(num);
+			format_num(num, 10);
 			break;
 		default:
 			break;

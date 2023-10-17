@@ -1,24 +1,30 @@
 #include "main.h"
 /**
- * *print_int-format inputted iteger
- * *@num:inputted number
- * *Return:count of printed numbers
- * **/
-int print_int(int num)
+ *print_int-format inputted iteger
+ *@num:inputted number
+ *@num_base:base of the given number 
+ *Return:count of printed numbers
+ **/
+int format_num(int num, int num_base)
 {
-	int res = 0;
-	int index,number;
+	int count = 0;
+	char *nums = "0123456789abcdef";
 
-	if (num<0)
-	{ res++;
-	_putchar('-');
-	}
-	for (index = 10; index <= num; index *= 10)
+	if (num < 0)
 	{
-		number = (num/index) %10;
-		res++;
-		_putchar('0'+ number);
+	_putchar('-');
+	num = -1 * num;
+	return (format_num(num, num_base));
 	}
-	
-	return (1);
+	else if (num < num_base)
+	{
+		num = nums[num];
+		_putchar(num);
+		return (count);
+	}
+	else {
+		count = format_num(num / num_base, num_base);
+		_putchar(format_num(num % num_base, num_base));
+		return (count);
+	}
 }
