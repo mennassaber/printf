@@ -28,12 +28,12 @@ int handle_holder(char h, va_list arg)
 			count += 1;
 			break;
 		case 'd':
-			num = va_arg(arg, long int);
-			format_int(num, 10);
+			num = va_arg(arg, double);
+			count += format_int(num, 10);
 			break;
 		case 'i':
-			num = va_arg(arg,int);
-			format_int(num, 10);
+			num = va_arg(arg, int);
+			count += format_int(num, 10);
 			break;
 		default:
 			break;

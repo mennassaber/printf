@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *print_int-format inputted iteger
+ *format_int-format inputted iteger
  *@num:inputted number
- *@num_base:base of the given number 
+ *@num_base:base of the given number
  *Return:count of printed numbers
  **/
 int format_int(int num, int num_base)
@@ -22,7 +22,8 @@ int format_int(int num, int num_base)
 		_putchar(num);
 		return (count);
 	}
-	else {
+	else
+	{
 		count = format_int(num / num_base, num_base);
 		_putchar(format_int(num % num_base, num_base));
 		return (count);
