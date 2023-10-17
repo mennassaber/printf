@@ -35,6 +35,10 @@ int handle_holder(char h, va_list arg)
 			num = va_arg(arg, int);
 			count += format_int(num, 10);
 			break;
+		case 'b':
+			num = va_arg(arg, int);
+			count += format_int(num, 2);
+			break;
 		default:
 			break;
 	}
