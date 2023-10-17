@@ -5,6 +5,13 @@
  * **/
 int print_str(char *str)
 {
-	(void)str;
-	return (1);
+	int i;
+	int count = 0;
+
+	for (i = 0; i <= _strlen(str); i++)
+	{
+	_putchar(str[i]);
+	count++;
+	}
+	return (count);
 }
