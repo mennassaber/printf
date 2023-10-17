@@ -35,7 +35,6 @@ else
 			}
 		}
 	}
-printf("%i\n",count);
 	va_end(arg);
 	return (count);
 }
