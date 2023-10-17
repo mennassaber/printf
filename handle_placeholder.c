@@ -40,6 +40,7 @@ int handle_holder(char h, va_list arg)
 			count += format_int(num, 2);
 			break;
 		default:
+			_putchar(h);
 			break;
 	}
 	return (count);
