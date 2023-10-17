@@ -11,6 +11,7 @@ int _putchar(char c);
 int _strlen(char *s);
 int _constlen(const char *con);
 int handle_holder(char h, va_list arg);
+int print_int(int num);
 /**
  * struct specifier- handles specifier in string
  * @holder:place holder for replacement
@@ -20,6 +21,7 @@ typedef struct specifier
 {
 	char *holder;
 	void (*f)(char *, va_list);
-}holder_specifier;
+}
+holder_specifier;
 
 #endif

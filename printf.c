@@ -22,7 +22,7 @@ else
 		{
 			if (format[i] == '%')
 			{
-				handle_holder(format[i + 1], arg);
+				count += handle_holder(format[i + 1], arg);
 			}
 			if ((format[i] != '%') && (format[i] != '\0'))
 			{
@@ -31,9 +31,11 @@ else
 					continue;
 				}
 				_putchar(format[i]);
+				count += 1;
 			}
 		}
 	}
+printf("%i\n",count);
 	va_end(arg);
 	return (count);
 }

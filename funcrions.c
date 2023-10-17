@@ -42,4 +42,3 @@ int _constlen(const char *con)
 	}
 	return (len);
 }
-
