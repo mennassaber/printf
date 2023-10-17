@@ -21,7 +21,8 @@ int handle_holder(char h, va_list arg)
 			break;
 		case 's':
 			str = va_arg(arg, char*);
-			count += print_str(str);
+			write(1, str, _strlen(str));
+			count += 1;
 			break;
 		case '%':
 			write(1, "%", 1);
