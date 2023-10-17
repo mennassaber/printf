@@ -14,17 +14,17 @@ int format_num(long int num, int num_base)
 	{
 	_putchar('-');
 	num = -1 * num;
-	return (format_num(num, num_base));
+	return ((char)format_num(num, num_base));
 	}
 	else if (num < num_base)
 	{
 		num = nums[num];
-		_putchar(num);
+		_putchar((char)num);
 		return (count);
 	}
 	else {
 		count = format_num(num / num_base, num_base);
-		_putchar(format_num(num % num_base, num_base));
+		_putchar((char)format_num(num % num_base, num_base));
 		return (count);
 	}
 }
