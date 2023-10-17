@@ -28,7 +28,7 @@ int handle_holder(char h, va_list arg)
 			count += 1;
 			break;
 		case 'd':
-			num = va_arg(arg, double);
+			num = va_arg(arg, int);
 			count += format_int(num, 10);
 			break;
 		case 'i':
