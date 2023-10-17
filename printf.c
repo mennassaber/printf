@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 va_start(arg, format);
-if (format == NULL)
+if (!format ||format == NULL)
 {
 	return (-1);
 	}
@@ -36,5 +36,5 @@ else
 		}
 	}
 	va_end(arg);
-	return (count);
+	return (count - 1);
 }
