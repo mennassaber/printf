@@ -13,13 +13,11 @@ int format_int(int num, int num_base)
 	if (num < 0)
 	{
 	_putchar('-');
-	num = -1 * num;
-	return (format_int(num, num_base));
+	return (format_int(-num, num_base));
 	}
 	else if (num < num_base)
 	{
-		num = (unsigned int) nums[num];
-		_putchar(num);
+		_putchar(nums[num]);
 		return (count);
 	}
 	else
