@@ -12,6 +12,10 @@ int _strlen(char *s);
 int _constlen(const char *con);
 int handle_holder(char h, va_list arg);
 int print_int(int num);
+<<<<<<< HEAD
+=======
+int print_str(char *str);
+>>>>>>> 43beebe049127daee94ede8164cd6892664efdcd
 /**
  * struct specifier- handles specifier in string
  * @holder:place holder for replacement
