@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * *print_str-format inputted string
  * *@str:inputted string
@@ -10,7 +11,7 @@ int print_str(char *str)
 
 	for (i = 0; i <= _strlen(str); i++)
 	{
-	_putchar(str[i]);
+	write(1,&str[i],1);
 	count++;
 	}
 	return (count);
