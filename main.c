@@ -26,6 +26,11 @@ int _strlen(char *str)
 	}
 	return (count);
 }
+/**
+ * _constlen-measure length of constant
+ * @con:given const
+ * Return:length of input
+ **/
 int _constlen(const char *con)
 {
 	int len = 0;
@@ -38,3 +43,4 @@ int _constlen(const char *con)
 	}
 	return (len);
 }
+
