@@ -6,5 +6,19 @@
  * **/
 int print_int(int num)
 {
-	return (num);
+	int res = 0;
+	int index,number;
+
+	if (num<0)
+	{ res++;
+	_putchar('-');
+	}
+	for (index = 10; index <= num; index *= 10)
+	{
+		number = (num/index) %10;
+		res++;
+		_putchar('0'+ number);
+	}
+	
+	return (1);
 }
