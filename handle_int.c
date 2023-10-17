@@ -5,7 +5,7 @@
  *@num_base:base of the given number 
  *Return:count of printed numbers
  **/
-int format_num(long int num, int num_base)
+int format_int(int num, int num_base)
 {
 	int count = 0;
 	char *nums = "0123456789abcdef";
@@ -14,7 +14,7 @@ int format_num(long int num, int num_base)
 	{
 	_putchar('-');
 	num = -1 * num;
-	return (format_num(num, num_base));
+	return (format_int(num, num_base));
 	}
 	else if (num < num_base)
 	{
@@ -23,8 +23,8 @@ int format_num(long int num, int num_base)
 		return (count);
 	}
 	else {
-		count = format_num(num / num_base, num_base);
-		_putchar(format_num(num % num_base, num_base));
+		count = format_int(num / num_base, num_base);
+		_putchar(format_int(num % num_base, num_base));
 		return (count);
 	}
 }
