@@ -6,13 +6,13 @@
  * **/
 int print_str(char *str)
 {
-	int i;
 	int count = 0;
 
-	for (i = 0; i <= _strlen(str); i++)
+	while(*str != '\0')
 	{
-	write(1,&str[i],1);
+	write(1,&str,1);
 	count++;
+	str++;
 	}
 	return (count);
 }
