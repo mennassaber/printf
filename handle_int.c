@@ -18,12 +18,14 @@ int format_int(int num, int num_base)
 	else if (num < num_base)
 	{
 		_putchar(nums[num]);
+		count += 1;
 		return (count);
 	}
 	else
 	{
 		count = format_int(num / num_base, num_base);
 		_putchar(format_int(num % num_base, num_base));
+		count += 1;
 		return (count);
 	}
 }
