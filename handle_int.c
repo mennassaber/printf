@@ -13,7 +13,7 @@ int format_int(int num, int num_base)
 	if (num < 0)
 	{
 	_putchar('-');
-	return (format_int(-num, num_base));
+	return (format_int(-num, num_base) + 1);
 	}
 	else if (num < num_base)
 	{
