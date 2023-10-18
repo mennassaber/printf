@@ -18,7 +18,7 @@ int format_int(int num, int num_base)
 	}
 	else if (num < num_base)
 	{
-		_putchar((char)nums[num]);
+		_putchar(nums[num]);
 		return (count);
 	}
 	else
