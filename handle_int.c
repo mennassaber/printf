@@ -8,6 +8,7 @@
 int format_int(int num, int num_base)
 {
 	int count = 0;
+	int len = 0;
 	char *nums = "0123456789abcdef";
 
 	if (num < 0)
@@ -17,13 +18,15 @@ int format_int(int num, int num_base)
 	}
 	else if (num < num_base)
 	{
-		_putchar(nums[num]);
+		_putchar((char)nums[num]);
 		return (count);
 	}
 	else
 	{
 		count = format_int(num / num_base, num_base);
+		len += 1;
 		_putchar(format_int(num % num_base, num_base));
 		return (count);
+		return (len);
 	}
 }

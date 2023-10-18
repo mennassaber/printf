@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  *_printf-produce output according to a format
  *@format:input string
