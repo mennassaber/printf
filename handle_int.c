@@ -25,6 +25,5 @@ int format_int(int num, int num_base)
 		count = format_int(num / num_base, num_base);
 		_putchar(format_int(num % num_base, num_base));
 		return (count);
-		return (len);
 	}
 }
