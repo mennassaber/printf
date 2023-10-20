@@ -22,7 +22,7 @@ int format_int(int num, int num_base)
 	count += 1;
 	num = -1 * num;
 	}
-	while (num)
+	iwhile (num)
 	{
 		res = (res * num_base) + (num % num_base);
 		if (res == 0)
