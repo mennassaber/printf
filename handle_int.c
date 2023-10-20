@@ -1,27 +1,26 @@
 #include "main.h"
 /**
  *format_int-format inputted iteger
- *@num:inputted number
+ *@input:inputted number
  *@num_base:base of the given number
  *Return:count of printed numbers
  **/
-int format_int(int num, int num_base)
+int format_int(long int input, int num_base)
 {
-	int res = 0, ctn = 0, ptr, count = 0;
+	unsigned long int num, res = 0, ctn = 0, ptr, count = 0;
 	char *nums = "0123456789abcdef";
 
-	if (num == 0)
+	if (input == 0)
 	{write(1, "0", 1);
 	count = 1;
 	}
-	else
-	{
-	if (num < 0)
+	if (input < 0)
 	{
 	_putchar('-');
 	count += 1;
-	num = -1 * num;
+	input = -1 * input;
 	}
+	num = (unsigned long int)input;
 	while (num)
 	{
 		res = (res * num_base) + (num % num_base);
@@ -42,6 +41,6 @@ int format_int(int num, int num_base)
 	{
 		_putchar('0');
 		ctn--;
-	}}
+	}
 	return (count);
 }
