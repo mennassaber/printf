@@ -20,12 +20,8 @@ int format_int(long int input, int num_base)
 	count += 1;
 	input = -1 * input;
 	}
-<<<<<<< HEAD
-	iwhile (num)
-=======
 	num = (unsigned long int)input;
 	while (num)
->>>>>>> 89ea9b8669843b2995df010fc2d69e66b4a96a60
 	{
 		res = (res * num_base) + (num % num_base);
 		if (res == 0)
