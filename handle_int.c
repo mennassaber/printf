@@ -13,20 +13,18 @@ int format_int(int num, int num_base)
 	if (num < 0)
 	{
 	_putchar('-');
-	return ((format_int(-num, num_base)) + 1);
+	count = 1;
+	return (count + (format_int(-num, num_base)));
 	}
 	else if (num < num_base)
 	{
 		_putchar(nums[num]);
-	
 		return (count);
 	}
 	else
 	{
 		count = format_int(num / num_base, num_base);
-		_putchar(format_int(num % num_base, num_base));
-		count += 1;
-		/*return (count);*/
+		/*_putchar(format_int(num % num_base, num_base));*/
+		return (count + format_int(num % num_base, num_base));
 	}
-	return (count);
 }
