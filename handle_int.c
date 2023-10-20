@@ -7,12 +7,15 @@
  **/
 int format_int(int num, int num_base)
 {
-	int res = 0;
-	int ctn = 0;
-	int ptr;
-	int count = 0;
+	int res = 0, ctn = 0, ptr, count = 0;
 	char *nums = "0123456789abcdef";
 
+	if (num == 0)
+	{write(1, "0", 1);
+	count = 1;
+	}
+	else
+	{
 	if (num < 0)
 	{
 	_putchar('-');
@@ -39,6 +42,6 @@ int format_int(int num, int num_base)
 	{
 		_putchar('0');
 		ctn--;
-	}
+	}}
 	return (count);
 }
