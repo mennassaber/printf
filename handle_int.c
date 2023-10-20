@@ -7,24 +7,38 @@
  **/
 int format_int(int num, int num_base)
 {
-	int count = 1;
+	int res = 0;
+	int ctn = 0;
+	int ptr;
+	int count = 0;
 	char *nums = "0123456789abcdef";
 
 	if (num < 0)
 	{
 	_putchar('-');
-	count = 1;
-	return (count + (format_int(-num, num_base)));
+	count += 1;
+	num = -1 * num;
 	}
-	else if (num < num_base)
+	while (num)
 	{
-		_putchar(nums[num]);
-		return (count);
+		res = (res * num_base) + (num % num_base);
+		if (res == 0)
+		{
+			ctn++;
+		}
+	count += 1;
+	num = num / num_base;
 	}
-	else
+	while (res)
 	{
-		count = format_int(num / num_base, num_base);
-		/*_putchar(format_int(num % num_base, num_base));*/
-		return (count + format_int(num % num_base, num_base));
+		ptr = (res % num_base);
+		_putchar(nums[ptr]);
+		res = res / num_base;
 	}
+	while (ctn)
+	{
+		_putchar('0');
+		ctn--;
+	}
+	return (count);
 }
